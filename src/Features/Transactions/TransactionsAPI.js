@@ -1,4 +1,4 @@
-import axios from "../utilitis/axios"
+import axios from "../../utilitis/axios"
 
 
 export const getTransactions = async () => {

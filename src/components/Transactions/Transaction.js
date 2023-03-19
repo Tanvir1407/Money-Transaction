@@ -2,7 +2,7 @@ import React from "react";
 import Delete from "../../images/delete.svg";
 import Edit from "../../images/edit.svg";
 
-export default function Tranjection() {
+export default function Transaction() {
   return (
     <li className="transaction income">
       <p>Earned this month</p>
