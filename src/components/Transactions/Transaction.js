@@ -1,8 +1,9 @@
 import React from "react";
-import Delete from "../../images/delete.svg";
 import Edit from "../../images/edit.svg";
+import Delete from "../../images/delete.svg";
 
-export default function Transaction() {
+
+const Transaction = () => {
   return (
     <li className="transaction income">
       <p>Earned this month</p>
@@ -17,4 +18,6 @@ export default function Transaction() {
       </div>
     </li>
   );
-}
+};
+
+export default Transaction;

@@ -1,15 +1,15 @@
 import Balence from "./components/Balence";
 import Form from "./components/Form";
 import Layout from "./components/Layout";
-import Transactions from "./components/Transactions/Transactions";
+import Transacitons from "./components/Transactions/Transacitons";
 
 function App() {
   return (
       <Layout>
           <Balence />
           <Form />
-          <Transactions></Transactions>
-    </Layout>
+          <Transacitons/>
+      </Layout>
   );
 }
 

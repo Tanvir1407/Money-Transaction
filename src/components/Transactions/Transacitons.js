@@ -1,7 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-export default function Transactions() {
+const Transacitons = () => {
   return (
     <>
       <p className="second_heading">Your Transactions:</p>
@@ -13,4 +13,6 @@ export default function Transactions() {
       </div>
     </>
   );
-}
+};
+
+export default Transacitons;
