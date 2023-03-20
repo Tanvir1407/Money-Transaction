@@ -34,11 +34,6 @@ export default function Form() {
     setAmount("");
   }
 
-  const handleToCancel = () => {
-    setEditMethod(false);
-    dispatch(editInActive())
-    reset();
-  }
   const handleCreate = (e) => {
     e.preventDefault();
     dispatch(createTransaction({
@@ -50,7 +45,6 @@ export default function Form() {
   }
   const handleUpdate = (e) => {
     e.preventDefault()
-    
     dispatch(changeTransaction({
       id: editing.id,
       data: {
@@ -59,7 +53,12 @@ export default function Form() {
         amount: amount
       }
     }))
-    editMethod(false)
+    setEditMethod(false)
+    reset();
+  }
+    const handleToCancel = () => {
+    setEditMethod(false);
+    dispatch(editInActive())
     reset();
   }
 
