@@ -9,8 +9,9 @@ export const addTransactions = async (data) => {
     const response = await axios.post("/transactions", data)
     return response.data;
 }
-export const updateTransactions = async (id,data) => {
-    const response = await axios.put(`/transactions/${id}`, data)
+export const updateTransactions = async({id , data}) => {
+    console.log(id)
+    const response = await axios.put(`/transactions/${id}`,data)
     return response.data;
 }
 export const deleteTransactions = async (id) => {

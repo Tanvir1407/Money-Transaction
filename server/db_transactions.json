@@ -1,10 +1,10 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "name": "Salary from Google",
-      "type": "income",
-      "amount": 1000000
+      "name": "merketing for wife",
+      "type": "expense",
+      "amount": "999999",
+      "id": 1
     },
     {
       "id": 2,
@@ -13,9 +13,9 @@
       "amount": 200000
     },
     {
-      "name": "Salary form fiverr",
+      "name": "Salary from Google",
       "type": "income",
-      "amount": 34000,
+      "amount": 1000000,
       "id": 3
     }
   ]

@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { addTransactions, getTransactions } from "./TransactionsAPI"
+import { addTransactions, deleteTransactions, getTransactions, updateTransactions } from "./TransactionsAPI"
 
 const initialState = {
     transactions: [],
     isLoading: false,
     isError: false,
-    error: ""
+    error: "",
+    editing:{}
 }
 
 // async thunks
@@ -19,12 +20,12 @@ export const createTransaction = createAsyncThunk('transactions/createTransactio
     return transaction;
 })
 
-export const changeTransaction = createAsyncThunk('transactions/changeTransaction',  async ({id, data}) => {
-    const transaction = await addTransactions(id,data)
+export const changeTransaction = createAsyncThunk('transactions/changeTransaction', async ({id, data}) => {
+const transaction = await updateTransactions({id, data})
     return transaction;
 })
 export const removeTransaction = createAsyncThunk('transactions/removeTransaction',  async (id) => {
-    const transaction = await addTransactions(id)
+    const transaction = await deleteTransactions(id)
     return transaction;
 });
 
@@ -33,6 +34,14 @@ export const removeTransaction = createAsyncThunk('transactions/removeTransactio
 const transactionSlice = createSlice({
     name: "Transactions",
     initialState,
+    reducers: {
+        editActive: (state, action) => {
+            state.editing = action.payload
+        },
+        editInActive: (state, action) => {
+            state.editing = {}
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchTransactions.pending, (state) => {
@@ -105,3 +114,4 @@ const transactionSlice = createSlice({
 })
 
 export default transactionSlice.reducer; 
+export const { editActive, editInActive} = transactionSlice.actions;
